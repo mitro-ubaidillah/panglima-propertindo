@@ -16,6 +16,7 @@ import Project4 from "@/assets/project-4.png";
 import CardBenefit, { CardBenefitProps } from "@/components/card-benefit";
 import CardBooking from "@/components/card-booking";
 import CardProject, { CardProjectProps } from "@/components/card-project";
+import TitleSection from "@/components/common/TitleSection";
 import { GeneralQuestion } from "@/components/general-question";
 import Hero from "@/components/hero";
 import Layout from "@/components/layouts";
@@ -144,24 +145,24 @@ export default function Home() {
   return (
     <Layout>
       <Hero />
-      <section className="bg-background-dark h-[644px] w-full relative" id="benefit">
+      <section className="bg-background-dark min-h-[644px] w-full relative" id="benefit">
         <Image 
           src={Frame} 
           alt="frame image" 
-          className="w-full absolute" 
+          className="w-full absolute h-full" 
           priority 
         />
-        <div className="relative px-30 py-20 grid grid-cols-1 gap-10">
+        <div className="relative xl:px-30 md:px-10 lg:px-20 xl:py-20 lg:py-12 md:py-10 grid grid-cols-1 gap-10">
           <div className="flex justify-between gap-10 items-center">
-            <h2 className="text-3xl font-semibold text-primary-foreground flex flex-col min-w-[324px] leading-[48px]">
+            <h2 className="lg:text-3xl md:text-xl font-semibold text-primary-foreground flex flex-col lg:min-w-[324px] md:min-w-[250px] lg:leading-[48px] md:leading-[32px]">
               <span>Kenapa Harus</span>
               <span className="text-secondary">Panglima Propertindo?</span>
             </h2>
-            <p className="max-w-[836px] text-primary-foreground leading-[28px]">
+            <p className="max-w-[836px] text-primary-foreground leading-[28px] sm:text-sm md:text-base">
               Dengan komitmen penuh pada prinsip-prinsip syariah, kami menghadirkan properti berkualitas tinggi yang memberikan keamanan dan keberkahan bagi Anda dan keluarga.
             </p>
           </div>
-          <div className="grid grid-cols-3 relative gap-8">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 relative gap-8">
             {
               BENFITS.map((item, key) => (
                 <CardBenefit 
@@ -173,9 +174,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="project" className="bg-background-secondary py-20 px-30 space-y-10">
-        <div className="space-y-4">
-          <h2 className="text-foreground font-semibold text-3xl">Project</h2>
+      <section id="project" className="bg-background-secondary xl:py-20 lg:py-16 md:py-14 xl:px-30 lg:px-20 md:px-10 space-y-10">
+        <div className="lg:space-y-4 xl:space-y-4 space-y-3">
+          <TitleSection>Project</TitleSection>
           <p className="text-muted-foreground">Berikut adalah daftar project dari Panglima Propertindo</p>
         </div>
         <div className="grid grid-cols-3 gap-10">
@@ -186,8 +187,8 @@ export default function Home() {
           }
         </div>
       </section>
-      <section id="tentang-kami" className="p-20 space-y-10 bg-white">
-        <h2 className="text-3xl font-semibold text-foreground">Tentang Kami</h2>
+      <section id="tentang-kami" className="xl:p-20 lg:p-2 md:p-10 space-y-10 bg-white">
+        <TitleSection>Tentang Kami</TitleSection>
         <div className="flex gap-5 items-center justify-between">
           <Image src={Logo} alt="Logo panglima propertindo" />
           <p className="text-accent-foreground max-w-[976px]">
@@ -197,7 +198,7 @@ export default function Home() {
         <div className="relative w-full h-[295px]">
           <Image src={AboutUsBanner} alt="client image" className="rounded-lg absolute z-10 w-full h-full object-cover" />
           <div className="w-full bg-black/40 h-[295px] absolute rounded-lg top-0 left-0 z-20" />
-          <div className="flex gap-5 relative z-30 h-full items-center justify-center">
+          <div className="flex gap-5 relative z-30 h-full items-center justify-center flex-wrap">
             {
               ABOUT_US.map((item, key) => (
                 <div className="rounded-lg bg-primary border-border border-2 p-5 text-center min-w-[190px] max-w-[208px]" key={key}>
@@ -210,7 +211,7 @@ export default function Home() {
         </div>
         <div className="border-border border bg-background p-5 space-y-5 rounded-lg">
           <h3 className="text-foreground font-semibold text-xl">Visi</h3>
-          <p className="text-accent-foreground">Menjadi Developer Property Syariah Kelas Dunia, pengembang lingkungan pemukiman yang baik yang Menenangkan Hati.</p>
+          <p className="text-accent-foreground">Menjadi Developer Property Syariah Kelas Dunia, pengembang lingkungan pemukiman yang baik yang Menenangkan Hati.</p>
         </div>
         <div className="border-border border bg-background p-5 space-y-5 rounded-lg">
           <h3 className="text-foreground font-semibold text-xl">Misi</h3>
@@ -263,7 +264,7 @@ export default function Home() {
             rating: 5
           },
           {
-            name: "Anisa Mahdiana Awalin7",
+            name: "Anisa Mahdiana Awalin",
             comment: "RatingList",
             photo: "",
             rating: 5

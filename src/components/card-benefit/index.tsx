@@ -18,11 +18,11 @@ export default function CardBenefit({
   return (
     <Card className="bg-primary border-none">
       <CardHeader className="flex items-center gap-2">
-        <div className="bg-background rounded-lg p-2 h-[48xp] w-[48px] relative">
-          <Image src={icon} alt={alt} width={32} height={32} />
-          <XCircle className="text-destructive absolute right-[-8px] bottom-[-8px]" size={24} fill="white" />
+        <div className="bg-background rounded-lg p-2 lg:h-[48xp] lg:w-[48px] md:w-[36px] md:h-[36px] relative">
+          <Image src={icon} alt={alt} />
+          <XCircle className="text-destructive absolute right-[-8px] bottom-[-8px] lg:w-[24px] md:w-[18px]" fill="white" />
         </div>
-        <h3 className="font-semibold text-primary-foreground text-xl">{title}</h3>
+        <h3 className="font-semibold text-primary-foreground lg:text-xl md:text-sm">{title}</h3>
       </CardHeader>
       <CardContent>
         <p className="text-sm text-primary-foreground">{description}</p>

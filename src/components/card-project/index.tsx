@@ -23,12 +23,12 @@ export default function CardProject({
       <CardContent className="space-y-4">
         <Image src={image} alt={alt ?? `Gambar ${title}`} className="max-w-[500px] w-full" />
         
-        <h3 className="text-xl text-foreground font-semibold">{title}</h3>
+        <h3 className="xl:text-xl lg:text-xl text-foreground font-semibold">{title}</h3>
         
         <div className="flex items-center gap-2">
           <MapPin className="text-secondary" size={24} />
-          <div className="w-[350px] space-y-1">
-            <p className="text-sm text-secondary-foreground text-ellipsis overflow-hidden w-full whitespace-nowrap">
+          <div className="lg:w-[90%] xl:w-[90%] w-[80%] space-y-1">
+            <p className="text-sm text-secondary-foreground text-ellipsis overflow-hidden whitespace-nowrap">
               {address}
             </p>
             <div className="border-b w-fit text-secondary text-sm border-secondary flex items-center gap-2">
@@ -55,7 +55,7 @@ function UnitTypeBadge ({
   const visible = total > 3 ? type?.slice(0, 3) : type;
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 flex-wrap">
       {
         visible?.map((item) => (
           <Badge variant="secondary" key={item}>

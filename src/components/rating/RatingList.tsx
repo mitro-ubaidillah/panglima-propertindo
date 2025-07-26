@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState } from "react";
-import CardRating, { CardRatingProps } from "../card-rating";
 import { Carousel, type CarouselApi, CarouselContent, CarouselItem } from "../ui/carousel";
+import CardRating, { CardRatingProps } from "./CardRating";
 
 export default function RatingList({ 
   data 
