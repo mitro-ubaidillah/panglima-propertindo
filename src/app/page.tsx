@@ -1,103 +1,282 @@
+"use client"
+
+import AboutUsBanner from "@/assets/about-us.png";
+import Frame from "@/assets/frame.png";
+import BankIcon from "@/assets/icons/bank.png";
+import DangerIcon from "@/assets/icons/danger.png";
+import DisagreeIcon from "@/assets/icons/disagree.png";
+import HammerIcon from "@/assets/icons/hammer.png";
+import MoneyTreePlantIcon from "@/assets/icons/money-tree-plant.png";
+import XHomeIcon from "@/assets/icons/x-home.png";
+import Logo from "@/assets/logo-xl.png";
+import Project1 from "@/assets/project-1.png";
+import Project2 from "@/assets/project-2.png";
+import Project3 from "@/assets/project-3.png";
+import Project4 from "@/assets/project-4.png";
+import CardBenefit, { CardBenefitProps } from "@/components/card-benefit";
+import CardBooking from "@/components/card-booking";
+import CardProject, { CardProjectProps } from "@/components/card-project";
+import { GeneralQuestion } from "@/components/general-question";
+import Hero from "@/components/hero";
+import Layout from "@/components/layouts";
+import RatingList from "@/components/rating/RatingList";
 import Image from "next/image";
+
+const BENFITS: CardBenefitProps[] = [
+  {
+    description: "Semua transaksi kami bebas dari bunga (riba) dan dilakukan dengan kejelasan dan adil",
+    title: "Tanpa Riba",
+    icon: MoneyTreePlantIcon,
+    alt: "Icon tanpa riba"
+  },
+  {
+    description: "Tanpa melibatkan pembiayaan bank konvensional, menghindari riba, gharar (ketidakpastian), dan maysir (spekulasi)",
+    title: "Tanpa KPR Bank",
+    icon: BankIcon,
+    alt: "Icon tanpa kpr bank"
+  },
+  {
+    description: "Semua transaksi kami bebas dari bunga (riba) dan dilakukan dengan kejelasan dan adil",
+    title: "Tanpa Sita",
+    icon: XHomeIcon,
+    alt: "Icon tanpa sita"
+  },
+  {
+    description: "Semua transaksi kami bebas dari bunga (riba) dan dilakukan dengan kejelasan dan adil",
+    title: "Tanpa Denda",
+    icon: HammerIcon,
+    alt: "Icon tanpa denda"
+  },
+  {
+    description: "Semua transaksi kami bebas dari bunga (riba) dan dilakukan dengan kejelasan dan adil",
+    title: "Tanpa Pinalti",
+    icon: DangerIcon,
+    alt: "Icon tanpa denda"
+  },
+  {
+    description: "Semua transaksi kami bebas dari bunga (riba) dan dilakukan dengan kejelasan dan adil",
+    title: "Tanpa Akad Bermasalah",
+    icon: DisagreeIcon,
+    alt: "Icon tanpa denda"
+  },
+];
+
+const PROJECT: CardProjectProps[] = [
+  {
+    image: Project1,
+    address: "Jl. Mulia, Jl. KH. Harun Nafsi Samarinda, Kalimantan Timur",
+    title: "Perumahan Halal Elfida Mulia",
+    type: ["Ahsan", "Mumtaz", "Sultan", "Single", "Couple", "Family", "Kavling", "Kavling Hook", "Villa"]
+  },
+  {
+    image: Project2,
+    title: "Salima Memorial Park - Sambutan",
+    address: "Jl. Sultan Sulaiman Sambutan, Samarinda, Kalimantan Timur",
+    type: ["Single", "Couple", "Family", "Ahsan"]
+  },
+  {
+    image: Project3,
+    title: "Pesona Elfida",
+    address: "Jl. Gn. Lingai Sungai Pinang, Samarinda, Kalimantan Timur",
+    type: ["Al Kalam", "Al Karim"]
+  },
+  {
+    image: Project4,
+    title: "Royal Garden Panglima",
+    address: "Jl. Magelang, Lempake, Samarinda, Kalimantan Timur",
+    type: ["Kavling Produktif", "Kavling Villa"]
+  },
+  {
+    image: Project3,
+    title: "Mulia Park Regency",
+    address: "Jl. Mulia, Jl. KH. Harun Nafsi Samarinda, Kalimantan Timur",
+    type: ["Kavling", "Kavling Hook"]
+  }
+]
+
+const ABOUT_US = [
+  {
+    total: 6,
+    name: "Project Syariah"
+  },
+  {
+    total: 200,
+    name: "Telah STR"
+  },
+  {
+    total: 200,
+    name: "Telah STR"
+  },
+  {
+    total: 200,
+    name: "Telah STR"
+  },
+  {
+    total: 200,
+    name: "Telah STR"
+  },
+]
+
+const GENERAL_QUESTION = [
+  {
+    value: "item-1",
+    title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus exercitationem voluptates pariatur aliquid nesciunt neque unde quod voluptatum iure dicta, numquam at corrupti eius quis assumenda, voluptatibus minima. Commodi, quasi?"
+  },
+  {
+    value: "item-2",
+    title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus exercitationem voluptates pariatur aliquid nesciunt neque unde quod voluptatum iure dicta, numquam at corrupti eius quis assumenda, voluptatibus minima. Commodi, quasi?"
+  },
+  {
+    value: "item-3",
+    title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus exercitationem voluptates pariatur aliquid nesciunt neque unde quod voluptatum iure dicta, numquam at corrupti eius quis assumenda, voluptatibus minima. Commodi, quasi?"
+  },
+  {
+    value: "item-4",
+    title: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+    body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus exercitationem voluptates pariatur aliquid nesciunt neque unde quod voluptatum iure dicta, numquam at corrupti eius quis assumenda, voluptatibus minima. Commodi, quasi?"
+  },
+]
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <Layout>
+      <Hero />
+      <section className="bg-background-dark h-[644px] w-full relative" id="benefit">
+        <Image 
+          src={Frame} 
+          alt="frame image" 
+          className="w-full absolute" 
+          priority 
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="relative px-30 py-20 grid grid-cols-1 gap-10">
+          <div className="flex justify-between gap-10 items-center">
+            <h2 className="text-3xl font-semibold text-primary-foreground flex flex-col min-w-[324px] leading-[48px]">
+              <span>Kenapa Harus</span>
+              <span className="text-secondary">Panglima Propertindo?</span>
+            </h2>
+            <p className="max-w-[836px] text-primary-foreground leading-[28px]">
+              Dengan komitmen penuh pada prinsip-prinsip syariah, kami menghadirkan properti berkualitas tinggi yang memberikan keamanan dan keberkahan bagi Anda dan keluarga.
+            </p>
+          </div>
+          <div className="grid grid-cols-3 relative gap-8">
+            {
+              BENFITS.map((item, key) => (
+                <CardBenefit 
+                  {...item}
+                  key={key}
+                />
+              ))
+            }
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      <section id="project" className="bg-background-secondary py-20 px-30 space-y-10">
+        <div className="space-y-4">
+          <h2 className="text-foreground font-semibold text-3xl">Project</h2>
+          <p className="text-muted-foreground">Berikut adalah daftar project dari Panglima Propertindo</p>
+        </div>
+        <div className="grid grid-cols-3 gap-10">
+          {
+            PROJECT.map((item, key) => (
+              <CardProject {...item} key={key} />
+            ))
+          }
+        </div>
+      </section>
+      <section id="tentang-kami" className="p-20 space-y-10 bg-white">
+        <h2 className="text-3xl font-semibold text-foreground">Tentang Kami</h2>
+        <div className="flex gap-5 items-center justify-between">
+          <Image src={Logo} alt="Logo panglima propertindo" />
+          <p className="text-accent-foreground max-w-[976px]">
+            Sejak 1880, Panglima Propertindo menjadi Developer Syariah yang berkomitmen menyediakan Properti Halal Berkualitas bagi Ummat dengan Lingkungan yang Baik.
+          </p>
+        </div>
+        <div className="relative w-full h-[295px]">
+          <Image src={AboutUsBanner} alt="client image" className="rounded-lg absolute z-10 w-full h-full object-cover" />
+          <div className="w-full bg-black/40 h-[295px] absolute rounded-lg top-0 left-0 z-20" />
+          <div className="flex gap-5 relative z-30 h-full items-center justify-center">
+            {
+              ABOUT_US.map((item, key) => (
+                <div className="rounded-lg bg-primary border-border border-2 p-5 text-center min-w-[190px] max-w-[208px]" key={key}>
+                  <p className="text-primary-foreground text-xl font-semibold">{item.total}+</p>
+                  <span className="text-primary-foreground">{item.name}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div className="border-border border bg-background p-5 space-y-5 rounded-lg">
+          <h3 className="text-foreground font-semibold text-xl">Visi</h3>
+          <p className="text-accent-foreground">Menjadi Developer Property Syariah Kelas Dunia, pengembang lingkungan pemukiman yang baik yang Menenangkan Hati.</p>
+        </div>
+        <div className="border-border border bg-background p-5 space-y-5 rounded-lg">
+          <h3 className="text-foreground font-semibold text-xl">Misi</h3>
+          <ul className="list-disc pl-5 space-y-2 text-accent-foreground">
+            <li>Mengembangkan proyek Property yang memberi value terbaik & ketenangan hati.</li>
+            <li>Membentuk lingkungan yang berperan nyata dalam pembentukan Peradaban Mulia.</li>
+            <li>Bertumbuh dengan Cepat dan berkesinambungan sehingga dapat mensejahterakan para pemangku kepentingan</li>
+          </ul>
+        </div>
+      </section>
+      <section id="rating" className="py-14 px-20 bg-[#F4F4F5CC] space-y-12">
+        <h2 className="text-2xl text-foreground font-semibold">
+          Ulasan dari  Konsumen
+        </h2>
+        <RatingList data={[
+          {
+            name: "Anisa Mahdiana Awalin",
+            comment: "RatingList",
+            photo: "",
+            rating: 5
+          },
+          {
+            name: "Anisa Mahdiana Awalin2",
+            comment: "RatingList",
+            photo: "",
+            rating: 5
+          },
+          {
+            name: "Anisa Mahdiana Awalin3",
+            comment: "RatingList",
+            photo: "",
+            rating: 5
+          },
+          {
+            name: "Anisa Mahdiana Awalin4",
+            comment: "RatingList",
+            photo: "",
+            rating: 5
+          },
+          {
+            name: "Anisa Mahdiana Awalin5",
+            comment: "RatingList",
+            photo: "",
+            rating: 5
+          },
+          {
+            name: "Anisa Mahdiana Awalin6",
+            comment: "RatingList",
+            photo: "",
+            rating: 5
+          },
+          {
+            name: "Anisa Mahdiana Awalin7",
+            comment: "RatingList",
+            photo: "",
+            rating: 5
+          },
+        ]} />
+      </section>
+      <section id="pertanyaan-umum" className="bg-white p-20 space-y-10">
+        <h2 className="text-2xl text-foreground font-semibold">
+          Pertanyaan Umum
+        </h2>
+        <GeneralQuestion data={GENERAL_QUESTION} />
+      </section>
+      <CardBooking />
+    </Layout>
   );
 }
