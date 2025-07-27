@@ -152,13 +152,13 @@ export default function Home() {
           className="w-full absolute h-full" 
           priority 
         />
-        <div className="relative xl:px-30 md:px-10 lg:px-20 xl:py-20 lg:py-12 md:py-10 grid grid-cols-1 gap-10">
-          <div className="flex justify-between gap-10 items-center">
-            <h2 className="lg:text-3xl md:text-xl font-semibold text-primary-foreground flex flex-col lg:min-w-[324px] md:min-w-[250px] lg:leading-[48px] md:leading-[32px]">
+        <div className="relative xl:px-30 md:px-10 px-8 lg:px-20 xl:py-20 lg:py-12 md:py-10 py-8 grid grid-cols-1 gap-10">
+          <div className="flex justify-between flex-col md:flex-row md:gap-10 gap-4 md:items-center">
+            <h2 className="lg:text-3xl md:text-xl text-lg font-semibold text-primary-foreground flex flex-col gap-2 lg:min-w-[324px] md:min-w-[250px] lg:leading-[48px] md:leading-[32px]">
               <span>Kenapa Harus</span>
               <span className="text-secondary">Panglima Propertindo?</span>
             </h2>
-            <p className="max-w-[836px] text-primary-foreground leading-[28px] sm:text-sm md:text-base">
+            <p className="max-w-[836px] text-primary-foreground leading-[28px] text-sm md:text-base">
               Dengan komitmen penuh pada prinsip-prinsip syariah, kami menghadirkan properti berkualitas tinggi yang memberikan keamanan dan keberkahan bagi Anda dan keluarga.
             </p>
           </div>
@@ -174,12 +174,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="project" className="bg-background-secondary xl:py-20 lg:py-16 md:py-14 xl:px-30 lg:px-20 md:px-10 space-y-10">
+      <section id="project" className="bg-background-secondary xl:py-20 lg:py-16 md:py-14 py-10 xl:px-30 lg:px-20 md:px-10 px-8 space-y-10">
         <div className="lg:space-y-4 xl:space-y-4 space-y-3">
           <TitleSection>Project</TitleSection>
-          <p className="text-muted-foreground">Berikut adalah daftar project dari Panglima Propertindo</p>
+          <p className="text-muted-foreground md:text-base text-sm">Berikut adalah daftar project dari Panglima Propertindo</p>
         </div>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
           {
             PROJECT.map((item, key) => (
               <CardProject {...item} key={key} />
@@ -187,45 +187,45 @@ export default function Home() {
           }
         </div>
       </section>
-      <section id="tentang-kami" className="xl:p-20 lg:p-2 md:p-10 space-y-10 bg-white">
+      <section id="tentang-kami" className="xl:p-20 lg:p-20 md:p-10 p-8 space-y-10 bg-white">
         <TitleSection>Tentang Kami</TitleSection>
-        <div className="flex gap-5 items-center justify-between">
+        <div className="flex gap-5 items-center justify-between md:flex-row flex-col">
           <Image src={Logo} alt="Logo panglima propertindo" />
-          <p className="text-accent-foreground max-w-[976px]">
+          <p className="text-accent-foreground max-w-[976px] md:text-base text-sm">
             Sejak 1880, Panglima Propertindo menjadi Developer Syariah yang berkomitmen menyediakan Properti Halal Berkualitas bagi Ummat dengan Lingkungan yang Baik.
           </p>
         </div>
-        <div className="relative w-full h-[295px]">
+        <div className="relative w-full lg:h-[295px]">
           <Image src={AboutUsBanner} alt="client image" className="rounded-lg absolute z-10 w-full h-full object-cover" />
-          <div className="w-full bg-black/40 h-[295px] absolute rounded-lg top-0 left-0 z-20" />
-          <div className="flex gap-5 relative z-30 h-full items-center justify-center flex-wrap">
+          <div className="w-full bg-black/40 h-full absolute rounded-lg top-0 left-0 z-20" />
+          <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-5 relative z-30 h-full items-center justify-center p-5">
             {
               ABOUT_US.map((item, key) => (
-                <div className="rounded-lg bg-primary border-border border-2 p-5 text-center min-w-[190px] max-w-[208px]" key={key}>
-                  <p className="text-primary-foreground text-xl font-semibold">{item.total}+</p>
-                  <span className="text-primary-foreground">{item.name}</span>
+                <div className="rounded-lg bg-primary border-border border-2 p-5 text-center w-full" key={key}>
+                  <p className="text-primary-foreground text-lg md:text-xl font-semibold">{item.total}+</p>
+                  <span className="text-primary-foreground md:text-base text-sm">{item.name}</span>
                 </div>
               ))
             }
           </div>
         </div>
         <div className="border-border border bg-background p-5 space-y-5 rounded-lg">
-          <h3 className="text-foreground font-semibold text-xl">Visi</h3>
-          <p className="text-accent-foreground">Menjadi Developer Property Syariah Kelas Dunia, pengembang lingkungan pemukiman yang baik yang Menenangkan Hati.</p>
+          <h3 className="text-foreground font-semibold xl:text-xl lg:text-xl text-lg">Visi</h3>
+          <p className="text-accent-foreground lg:text-base xl:text-base text-sm">Menjadi Developer Property Syariah Kelas Dunia, pengembang lingkungan pemukiman yang baik yang Menenangkan Hati.</p>
         </div>
         <div className="border-border border bg-background p-5 space-y-5 rounded-lg">
-          <h3 className="text-foreground font-semibold text-xl">Misi</h3>
-          <ul className="list-disc pl-5 space-y-2 text-accent-foreground">
+          <h3 className="text-foreground font-semibold xl:text-xl lg:text-xl text-lg">Misi</h3>
+          <ul className="list-disc pl-5 space-y-2 text-accent-foreground lg:text-base xl:text-base text-sm">
             <li>Mengembangkan proyek Property yang memberi value terbaik & ketenangan hati.</li>
             <li>Membentuk lingkungan yang berperan nyata dalam pembentukan Peradaban Mulia.</li>
             <li>Bertumbuh dengan Cepat dan berkesinambungan sehingga dapat mensejahterakan para pemangku kepentingan</li>
           </ul>
         </div>
       </section>
-      <section id="rating" className="py-14 px-20 bg-[#F4F4F5CC] space-y-12">
-        <h2 className="text-2xl text-foreground font-semibold">
+      <section id="rating" className=" p-8 md:py-14 md:px-20 bg-[#F4F4F5CC] space-y-12">
+        <TitleSection>
           Ulasan dari  Konsumen
-        </h2>
+        </TitleSection>
         <RatingList data={[
           {
             name: "Anisa Mahdiana Awalin",
@@ -271,10 +271,10 @@ export default function Home() {
           },
         ]} />
       </section>
-      <section id="pertanyaan-umum" className="bg-white p-20 space-y-10">
-        <h2 className="text-2xl text-foreground font-semibold">
+      <section id="pertanyaan-umum" className="bg-white md:p-20 p-8 md:space-y-10 space-y-4">
+        <TitleSection>
           Pertanyaan Umum
-        </h2>
+        </TitleSection>
         <GeneralQuestion data={GENERAL_QUESTION} />
       </section>
       <CardBooking />

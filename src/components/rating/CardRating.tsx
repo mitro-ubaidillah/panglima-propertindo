@@ -40,16 +40,16 @@ export default function CardRating({
             <AvatarFallback>{getFirstLetter(name)}</AvatarFallback> 
           </Avatar>
 
-          <span className="text-foreground text-lg font-semibold">{name}</span>
+          <span className="text-foreground md:text-lg text-sm font-semibold">{name}</span>
         </div>
 
         <div className="flex gap-2">
           {Array.from({ length: rating > 5 ? 5 : rating }).map((_, index) => (
-            <Star key={index} fill="#FA9500" className="text-secondary size-4"  />
+            <Star key={index} fill="#FA9500" className="text-secondary md:size-4 size-3"  />
           ))}
         </div>
         
-        <p className="text-muted-foreground text-sm">{comment}</p>
+        <p className="text-muted-foreground text-xs md:text-sm">{comment}</p>
       </div>
     </Card>
   )

@@ -153,7 +153,7 @@ export default function Navbar() {
             </SheetHeader>
             
             {/* Mobile Menu Items */}
-            <div className="px-2 space-y-1">
+            <div className="px-2 space-y-1 max-h-[370px] overflow-auto">
               {MENU.map((item, key) => (
                 <MobileMenuItem 
                   key={key} 
@@ -164,7 +164,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Buttons */}
-            <div className="absolute bottom-6 left-6 right-6 space-y-3">
+            <div className="absolute bottom-2 left-6 right-6 space-y-3">
               <Button variant="outline" className="w-full" onClick={() => setIsOpen(false)}>
                 Daftar
               </Button>
