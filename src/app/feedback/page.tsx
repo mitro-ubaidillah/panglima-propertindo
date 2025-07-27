@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { useFeedback } from "@/hooks/use-feedback";
 import { StatusFeedbackType } from "@/types/feedback";
 import { Home, MessagesSquare, PlusSquare, Search } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 
@@ -32,6 +33,7 @@ export default function Feedback() {
   const [debounceSearchId, setDebounceSearchId] = useState<string>("");
   const [unit, setUnit] = useState<string>("");
   const [status, setStatus] = useState<StatusFeedbackType>();
+  const router = useRouter();
 
   const { data, isLoading, isError, error } = useGetFeedback();
 
@@ -80,7 +82,7 @@ export default function Feedback() {
     <Layout>
       <div className="flex justify-between items-center">
         <AppBreadcrumb data={BREADCRUMBS} />
-        <Button>
+        <Button onClick={() => router.push("/feedback/add")}>
           <PlusSquare />
           Buat Feedback
         </Button>
