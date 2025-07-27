@@ -33,7 +33,7 @@ export default function CardFeedback ({
         </div>
         <div className="flex justify-between items-start">
           <div className="space-y-2">
-            <p className="text-foreground font-bold">A12-75-{id}</p>
+            <p className="text-foreground font-bold">{id}</p>
             <Badge variant="default" className="text-xs">
               {unit}
             </Badge>
